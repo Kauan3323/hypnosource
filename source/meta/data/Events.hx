@@ -304,9 +304,9 @@ class Events {
 	public static function obtainEvents() {
 		loadedModules.clear();
 		eventList = [];
-		#if !android
-		var tempEventArray:Array<String> = FileSystem.readDirectory('assets/events');
-		#end
+		
+		var tempEventArray:Array<String> = FileSystem.readDirectory(Main.path + 'assets/events');
+		
 		//
 		var futureEvents:Array<String> = [];
 		var futureSubEvents:Array<String> = [];
@@ -317,9 +317,9 @@ class Events {
 				futureEvents.push(event);
 			} else {
 				if (PlayState.SONG != null && CoolUtil.spaceToDash(PlayState.SONG.song.toLowerCase()) == event) {
-					#if !android
-					var internalEvents:Array<String> = FileSystem.readDirectory('assets/events/$event');
-					#end
+					
+					var internalEvents:Array<String> = FileSystem.readDirectory(Main.path + 'assets/events/$event');
+					
 					for (subEvent in internalEvents)
 					{
 						subEvent = subEvent.substring(0, subEvent.indexOf('.', 0));
