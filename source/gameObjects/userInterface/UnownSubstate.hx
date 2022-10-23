@@ -13,6 +13,7 @@ import flixel.system.FlxSound;
 import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
+import lime.utils.Assets;
 import flixel.util.FlxColor;
 import haxe.Json;
 import meta.MusicBeat.MusicBeatSubState;
@@ -140,7 +141,7 @@ class UnownSubstate extends MusicBeatSubState
 	}
 
     public static function init() {
-		var rawJson = File.getContent(Paths.getPath('unownTexts.json', TEXT)).trim();
+		var rawJson = Assets.getText(Paths.getPath('unownTexts.json', TEXT)).trim();
 		while (!rawJson.endsWith("}"))
 			rawJson = rawJson.substr(0, rawJson.length - 1);
         // trace(rawJson);
