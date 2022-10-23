@@ -70,9 +70,9 @@ class CoolUtil
 	{
 		
 		
-		var libraryArray:Array<String> = [];
-		var unfilteredLibrary = FileSystem.readDirectory(Main.path + '$subDir/$library');
-
+		var list = Assets.list();
+		var unfilteredLibrary = list.filter(text -> text.contains('$subDir/$library');
+						    
 		for (folder in unfilteredLibrary)
 		{
 			if (!folder.contains('.'))
