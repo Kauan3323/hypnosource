@@ -88,8 +88,7 @@ class FreeplayState extends MusicBeatState
 		// LOAD MUSIC
 		// ForeverTools.resetMenuMusic();
 
-		Discord.changePresence('FREEPLAY MENU', 'Main Menu');
-
+		
 		// LOAD CHARACTERS
 		bg = new FlxSprite().loadGraphic(Paths.image('menus/base/menuDesat'));
 		add(bg);
@@ -141,6 +140,10 @@ class FreeplayState extends MusicBeatState
 		selector.size = 40;
 		selector.text = ">";
 		// add(selector);
+		
+		#if android
+		addVirtualPad(LEFT_FULL, A_B);
+		#end
 	}
 
 	public function addSong(songName:String, weekNum:Int, songCharacter:String, ?library:String, old:Bool, songColor:FlxColor)
@@ -148,8 +151,8 @@ class FreeplayState extends MusicBeatState
 		///*
 		var coolDifficultyArray = [];
 		for (i in CoolUtil.difficultyArray)
-			if (FileSystem.exists(Paths.songJson(songName, songName + '-' + i, old))
-				|| (FileSystem.exists(Paths.songJson(songName, songName, old)) && i == "NORMAL"))
+			if (Assets.exists(Paths.songJson(songName, songName + '-' + i, old))
+				|| (Assets.exists(Paths.songJson(songName, songName, old)) && i == "NORMAL"))
 				coolDifficultyArray.push(i);
 
 		if (coolDifficultyArray.length > 0)
