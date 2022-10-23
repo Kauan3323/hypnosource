@@ -306,7 +306,7 @@ class Events {
 		eventList = [];
 		
 		var list = Assets.list();
-		var tempEventArray = list.filter(text -> text.contains('assets/events/$event'));
+		var tempEventArray = list.filter(text -> text.contains('assets/events'));
 		//
 		var futureEvents:Array<String> = [];
 		var futureSubEvents:Array<String> = [];
