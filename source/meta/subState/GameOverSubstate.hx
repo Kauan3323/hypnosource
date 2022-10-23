@@ -663,6 +663,10 @@ class GameOverSubstate extends MusicBeatSubState
 					};
 					deathEnd = function() {
 						bf.playAnim('deathConfirm');
+							
+							#if android
+		addVirtualPad(NONE, A_B);
+		#end
 					};
 				}
 			
