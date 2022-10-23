@@ -127,6 +127,10 @@ class DisclaimerState extends MusicBeatState
 		add(continuetext);
 		add(warningbox);
 		add(warningtext);
+		
+		#if android
+		addVirtualPad(LEFT_RIGHT, A);
+		#end
 
 		new FlxTimer().start(0.6, function(tmr:FlxTimer) {			
 			FlxTween.tween(warningbox, {'scale.x': 1, 'scale.y': 1, alpha: 1}, 0.5, {
