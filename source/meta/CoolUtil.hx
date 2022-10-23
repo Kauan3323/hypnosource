@@ -78,9 +78,6 @@ class CoolUtil
 			if (!folder.contains('.'))
 				libraryArray.push(folder);
 		}
-		trace(libraryArray);
-
-		return libraryArray;
 		
 	}
         
