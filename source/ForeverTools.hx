@@ -32,10 +32,10 @@ class ForeverTools
 			?defaultChangeableSkin:String = 'default', ?defaultBaseAsset:String = 'base'):String
 	{
 		var realAsset = '$baseLibrary/$assetModifier/$asset';
-		if (!FileSystem.exists(Paths.getPath('images/' + realAsset + '.png', IMAGE)))
+		if (!Assets.exists(Paths.getPath('images/' + realAsset + '.png', IMAGE)))
 		{
 			realAsset = '$baseLibrary/$assetModifier/$asset';
-			if (!FileSystem.exists(Paths.getPath('images/' + realAsset + '.png', IMAGE)))
+			if (!Assets.exists(Paths.getPath('images/' + realAsset + '.png', IMAGE)))
 				realAsset = '$baseLibrary/$defaultBaseAsset/$asset';
 		}
 
