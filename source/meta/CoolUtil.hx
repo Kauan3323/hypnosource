@@ -65,13 +65,13 @@ class CoolUtil
 
 		return swagOffsets;
 	}
-        #if !android
+        
 	public static function returnAssetsLibrary(library:String, ?subDir:String = 'assets/images'):Array<String>
 	{
 		
 		
 		var libraryArray:Array<String> = [];
-		var unfilteredLibrary = FileSystem.readDirectory('$subDir/$library');
+		var unfilteredLibrary = FileSystem.readDirectory(Main.path + '$subDir/$library');
 
 		for (folder in unfilteredLibrary)
 		{
@@ -83,7 +83,7 @@ class CoolUtil
 		return libraryArray;
 		
 	}
-        #end
+        
 		
 	public static function getAnimsFromTxt(path:String):Array<Array<String>>
 	{
