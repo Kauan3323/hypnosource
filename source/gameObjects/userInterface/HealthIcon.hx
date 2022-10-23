@@ -6,7 +6,7 @@ import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxAtlasFrames;
 import openfl.utils.Assets as OpenFlAssets;
 import sys.FileSystem;
-
+import lime.utils.Assets;
 using StringTools;
 
 class HealthIcon extends FlxSprite
