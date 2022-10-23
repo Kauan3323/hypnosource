@@ -64,6 +64,11 @@ class PastaNightSelect extends MusicBeatSubState {
         add(selectorArrow);
 
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+		
+		#if android
+		addVirtualPad(LEFT_RIGHT, A);
+		#end
+			
 		updateSelection(0);
     }
 
