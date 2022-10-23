@@ -25,6 +25,7 @@ import meta.data.dependency.FNFSprite;
 import meta.data.dependency.RealColor;
 import meta.state.PlayState;
 import openfl.display.GraphicsShader;
+import lime.utils.Assets;
 import openfl.display.Shader;
 import openfl.filters.ShaderFilter;
 import sys.FileSystem;
@@ -77,7 +78,7 @@ class ScriptHandler
 		// Classes (Forever)
 		exp.set("Init", Init);
 		exp.set("Paths", Paths);
-        exp.set("Note", Note);
+                exp.set("Note", Note);
 		exp.set("Strumline", Strumline);
 		exp.set("Events", Events);
 		exp.set("Conductor", Conductor);
@@ -86,7 +87,7 @@ class ScriptHandler
 		exp.set("Boyfriend", Boyfriend);
 		exp.set("FNFSprite", FNFSprite);
 		exp.set("HealthIcon", HealthIcon);
-        exp.set("PlayState", PlayState);
+                exp.set("PlayState", PlayState);
 		exp.set("CelebiNote", CelebiNote);
         
         //
@@ -97,7 +98,7 @@ class ScriptHandler
 	{
 		// trace('Loading Module $path');
 		var modulePath:String = Paths.module(path);
-		return new ForeverModule(parser.parseString(File.getContent(modulePath), modulePath), extraParams);
+		return new ForeverModule(parser.parseString(Assets.getText(modulePath), modulePath), extraParams);
 	}
 }
 
