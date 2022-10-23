@@ -554,7 +554,7 @@ class GameOverSubstate extends MusicBeatSubState
 	
 						deathEnd = function()
 						{
-							if (video != null) video.finishVideo();
+							
 							FlxTween.tween(bg, {alpha: 0}, timeBeforeEnd, {ease: FlxEase.linear});
 
 							onEnd = function()
@@ -568,8 +568,7 @@ class GameOverSubstate extends MusicBeatSubState
 						};
 
 						escapeFunction = function ()
-							{
-								if (video != null) video.finishVideo();
+							{        
 							}
 					} 
 				else if (PlayState.SONG.song.toLowerCase() == "monochrome") {
