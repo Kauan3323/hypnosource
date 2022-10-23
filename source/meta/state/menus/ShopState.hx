@@ -736,7 +736,7 @@ class ShopState extends MusicBeatState
 			}
 			if (right && !freeplaySelected)
 			{
-				Discord.changePresence('CHOOSING A SONG', 'Freeplay Menu');
+				
 				freeplaySelected = true;
 			}
 		}
