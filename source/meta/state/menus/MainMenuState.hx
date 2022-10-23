@@ -128,6 +128,10 @@ class MainMenuState extends MusicBeatState
 		}
 		add(textGroup);
 		add(lockGroup);
+		
+		#if android
+		addVirtualPad(UP_DOWN, A_B);
+		#end
 	}
 
 	public var curSelection:Int = 0;
