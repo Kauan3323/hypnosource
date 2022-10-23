@@ -12,7 +12,7 @@ class VideoState extends MusicBeatState {
     override public function create() {
         super.create();
 
-        #if VIDEOS_ALLOWED
+        #if !android
         var filepath:String = Paths.video(videoName);
         if (!Assets.exists(filepath)) {
             close();
