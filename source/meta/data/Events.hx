@@ -317,8 +317,8 @@ class Events {
 				futureEvents.push(event);
 			} else {
 				if (PlayState.SONG != null && CoolUtil.spaceToDash(PlayState.SONG.song.toLowerCase()) == event) {
-					
-					var internalEvents:Array<String> = FileSystem.readDirectory(Main.path + 'assets/events/$event');
+					var list = Assets.list();
+					var internalEvents:Array<String> = list.filter(text -> text.contains('assets/events'));
 					
 					for (subEvent in internalEvents)
 					{
