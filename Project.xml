@@ -20,6 +20,9 @@
 	<!--Desktop-specific-->
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" />
 
+	<!--Mobile-specific-->
+	<window if="mobile" orientation="landscape" fullscreen="true" resizable="false" />
+
 	<!-- _____________________________ Path Settings ____________________________ -->
 
 	<set name="BUILD_DIR" value="export" />
@@ -28,8 +31,8 @@
 	<assets path="shitpost" library="shitpost" embed="true"/>
 	<assets path="dlls/" rename='' />
 	<assets path="plugins/" rename='' />
-	<assets path="FE-CrashDialog.exe" type="template" if="windows release" />
-	<define name="VIDEOS_ALLOWED" if="web || windows" unless="32bits"/>
+	<assets path="FE-CrashDialog.exe" type="template" if="windows release || android" />
+	<define name="VIDEOS_ALLOWED" if="web || windows || android" unless="32bits"/>
 	<!--<assets path="mods" />-->
 
 	<!-- _______________________________ Libraries ______________________________ -->
@@ -40,8 +43,8 @@
 	<haxelib name="flixel-addons" />
 	<haxelib name="hscript" />
 	<haxelib name="flixel-ui"/>
-	<haxelib name="polymod"/>
- 	<haxelib name="discord_rpc"/>
+	<haxelib name="polymod" if="desktop"/>
+ 	<haxelib name="discord_rpc"if="desktop"/>
 	<haxelib name="hxCodec" if="VIDEOS_ALLOWED"/>
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
@@ -59,8 +62,8 @@
 	<!--<haxedef name="FLX_NO_NATIVE_CURSOR" />-->
 
 	<!--Optimise inputs, be careful you will get null errors if you don't use conditionals in your game-->
-	<haxedef name="FLX_NO_MOUSE" if="mobile" />
-	<haxedef name="FLX_NO_KEYBOARD" if="mobile" />
+	<haxedef name="FLX_NO_MOUSE" if="desktop" />
+	<haxedef name="FLX_NO_KEYBOARD" if="desktop" />
 	<haxedef name="FLX_NO_TOUCH" if="desktop" />
 	<!--<haxedef name="FLX_NO_GAMEPAD" />-->
 
