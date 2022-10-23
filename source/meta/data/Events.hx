@@ -305,7 +305,7 @@ class Events {
 		loadedModules.clear();
 		eventList = [];
 		
-		var tempEventArray:Array<String> = FileSystem.readDirectory(Main.path + 'assets/events');
+		var tempEventArray:Array<String> = list.filter(test-> text.contains('assets/events');
 		
 		//
 		var futureEvents:Array<String> = [];
