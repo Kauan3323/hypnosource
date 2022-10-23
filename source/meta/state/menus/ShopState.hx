@@ -147,9 +147,7 @@ class ShopState extends MusicBeatState
 	{
 		super.create();
 
-		if (!freeplaySelected)
-			
-		else
+		
 			
 
 		var rawJson = Assets.getText(Paths.getPath('images/shop/shopText.json', TEXT)).trim();
@@ -311,7 +309,7 @@ class ShopState extends MusicBeatState
 			trace('found folder: ' + i);
 			if (Assets.exists(Paths.getPath('images/shop/${i}/${i}.json', TEXT)))
 			{
-				var rawJson = File.getContent(Paths.getPath('images/shop/${i}/${i}.json', TEXT));
+				var rawJson = Assets.getText(Paths.getPath('images/shop/${i}/${i}.json', TEXT));
 				var swagShit:ShopItem = cast Json.parse(rawJson).itemDetail;
 				itemArray.push(swagShit);
 
