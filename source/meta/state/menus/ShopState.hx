@@ -147,11 +147,11 @@ class ShopState extends MusicBeatState
 		super.create();
 
 		if (!freeplaySelected)
-			Discord.changePresence('BROWSING THE SHOP', 'Freeplay Menu');
+			
 		else
-			Discord.changePresence('CHOOSING A SONG', 'Freeplay Menu');
+			
 
-		var rawJson = File.getContent(Paths.getPath('images/shop/shopText.json', TEXT)).trim();
+		var rawJson = Assets.getText(Paths.getPath('images/shop/shopText.json', TEXT)).trim();
 		while (!rawJson.endsWith("}"))
 			rawJson = rawJson.substr(0, rawJson.length - 1);
 		shopLines = cast Json.parse(rawJson).shopLines;
@@ -308,7 +308,7 @@ class ShopState extends MusicBeatState
 		for (i in folderList)
 		{
 			trace('found folder: ' + i);
-			if (FileSystem.exists(Paths.getPath('images/shop/${i}/${i}.json', TEXT)))
+			if (Assets.exists(Paths.getPath('images/shop/${i}/${i}.json', TEXT)))
 			{
 				var rawJson = File.getContent(Paths.getPath('images/shop/${i}/${i}.json', TEXT));
 				var swagShit:ShopItem = cast Json.parse(rawJson).itemDetail;
@@ -730,7 +730,7 @@ class ShopState extends MusicBeatState
 			if (left && freeplaySelected)
 			{
 				freeplaySelected = false;
-				Discord.changePresence('BROWSING THE SHOP', 'Freeplay Menu');
+				
 				shopSign.animation.play('signThing', true);
 				shuffleCartridgeIdle(true);
 				cartridgePlayIdle(true);
