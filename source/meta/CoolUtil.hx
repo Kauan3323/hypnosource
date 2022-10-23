@@ -68,7 +68,8 @@ class CoolUtil
 
 	public static function returnAssetsLibrary(library:String, ?subDir:String = 'assets/images'):Array<String>
 	{
-		//
+		
+		#if !android
 		var libraryArray:Array<String> = [];
 		var unfilteredLibrary = FileSystem.readDirectory('$subDir/$library');
 
@@ -80,6 +81,7 @@ class CoolUtil
 		trace(libraryArray);
 
 		return libraryArray;
+		#end
 	}
 
 	public static function getAnimsFromTxt(path:String):Array<Array<String>>
