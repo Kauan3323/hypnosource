@@ -69,15 +69,19 @@ class CoolUtil
 	public static function returnAssetsLibrary(library:String, ?subDir:String = 'assets/images'):Array<String>
 	{
 		
-		
+		var libraryArray:Array<String> = [];
 		var list = Assets.list();
 		var unfilteredLibrary = list.filter(text -> text.contains('$subDir/$library'));
-						    
+
 		for (folder in unfilteredLibrary)
 		{
 			if (!folder.contains('.'))
 				libraryArray.push(folder);
 		}
+		trace(libraryArray);
+
+		return libraryArray;
+		
 		
 	}
         
