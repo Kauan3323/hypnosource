@@ -205,12 +205,12 @@ class Paths
 	}
 
 	static public function shader(name:String) {
-		return File.getContent('./assets/shaders/$name.frag');
+		return Assets.getText('./assets/shaders/$name.frag');
 	}
 
 	static function getPreloadPath(file:String) {
 		var returnPath:String = '$currentLevel/$file';
-		if (!FileSystem.exists(returnPath))
+		if (!Assets.exists(returnPath))
 			returnPath = CoolUtil.swapSpaceDash(returnPath);
 		return returnPath;
 	}
@@ -282,7 +282,7 @@ class Paths
 		var graphic:FlxGraphic = returnGraphic(key, library, compression);
 		var fileContents;
 		if (library == null)
-			fileContents = File.getContent(file('images/$key.xml', library));
+			fileContents = Assets.getText(file('images/$key.xml', library));
 		else
 			fileContents = Assets.getText(file('images/$key.xml', library));
 		return (FlxAtlasFrames.fromSparrow(graphic, fileContents));
