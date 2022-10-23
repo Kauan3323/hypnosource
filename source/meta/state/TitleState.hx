@@ -236,6 +236,8 @@ class TitleState extends MusicBeatState
 			Conductor.songPosition = FlxG.sound.music.time;
 		// FlxG.watch.addQuick('amp', FlxG.sound.music.amplitude);
 
+		var pressedEnter:Bool = FlxG.keys.justPressed.ENTER;
+		
 		#if android
 		for (touch in FlxG.touches.list)
 			if (touch.justPressed)
