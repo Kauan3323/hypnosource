@@ -14,7 +14,7 @@ import meta.data.ScriptHandler;
 import meta.state.PlayState;
 import openfl.filters.ShaderFilter;
 import sys.FileSystem;
-
+import openfl.utils.Assets;
 using StringTools;
 
 typedef PlacedEvent = {
