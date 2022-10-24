@@ -260,8 +260,10 @@ class Init extends FlxState
 		loadSettings();
 		loadControls();
 
+		#if (!html5 && desktop)
 		Main.updateFramerate(trueSettings.get("Framerate Cap"));
-
+                #end
+			
 		// apply saved filters
 		FlxG.game.setFilters(filters);
 
@@ -349,8 +351,10 @@ class Init extends FlxState
 	public static function updateAll()
 	{
 		InfoHud.updateDisplayInfo(trueSettings.get('FPS Counter'), trueSettings.get('Debug Info'), trueSettings.get('Memory Counter'));
+		
+		#if (!html5 && desktop)
 		Main.updateFramerate(trueSettings.get("Framerate Cap"));
-
+                #end
 		///*
 		filters = [];
 		FlxG.game.setFilters(filters);
